@@ -1,0 +1,13 @@
+﻿@model Book
+
+<tr>
+    <td>
+        <h2 class="text-start">
+            <a asp-controller="Book"
+                asp-action="Details"
+                asp-route-id="@Model.BookId"
+                class="book-link">@Model.Title</a>
+        </h2>
+    </td>
+</tr>
+
