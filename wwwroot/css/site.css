@@ -13,8 +13,13 @@ html {
   min-height: 100%;
 }
 
+header {
+    background-color: black;
+}
+
 body {
   margin-bottom: 60px;
+  background-color: lightgray
 }
 
 table, tr, td {
@@ -39,9 +44,29 @@ a:hover {
     background-color: pink;
     text-align: center;
     padding-bottom: 50px;
+    border: 2px solid black;
+    border-radius: 10px;
+    box-shadow: black 10px 10px;
 }
 
 .main-book {
     background-color: lightblue;
     padding-bottom: 10px;
+    border: 2px solid black;
+    border-radius: 10px;
+    box-shadow: black 10px 10px;
 }
+
+footer {
+    background-color: black;
+    color: white;
+}
+
+.nav-link {
+    color: white;
+}
+
+.navbar-brand {
+    color: white;
+}
+

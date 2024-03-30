@@ -10,4 +10,7 @@
         <p>Year Published: @Model.Year</p>
         <p>Genre: @Model.Genre</p>
     </div>
+    <div>
+        <h2><a class="btn btn-secondary" asp-controller="User" asp-action="AddBook" asp-route-bookID="@Model.BookId">Add to your Book List</a></h2>
+    </div>
 </div>
