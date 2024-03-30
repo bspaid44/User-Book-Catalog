@@ -1,14 +1,22 @@
 using Microsoft.EntityFrameworkCore;
 using UserLibrary.Models;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity.UI;
 
 var builder = WebApplication.CreateBuilder(args);
+var connectionString = builder.Configuration.GetConnectionString("UserLibraryDbContext");
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<UserLibraryDbContext>(options =>
 {
-    options.UseSqlServer(builder.Configuration.GetConnectionString("UserLibraryDbContext"));
+    options.UseSqlServer(connectionString);
 });
+
+builder.Services.AddDefaultIdentity<IdentityUser>()
+    .AddEntityFrameworkStores<UserLibraryDbContext>();
+builder.Services.AddRazorPages();
 builder.Services.AddScoped<IBookRepository, BookRepository>();
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddSession();
@@ -27,9 +35,9 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
-
+app.UseAuthentication();
 app.UseAuthorization();
-
+app.MapRazorPages();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
