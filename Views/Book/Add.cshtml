@@ -1,0 +1,24 @@
+﻿@model Book
+
+<h1 class="my-5"><strong>Add a Book</strong></h1>
+
+<form asp-action="Create" method="post" role="form">
+    <div class="form-group col-12">
+        <label asp-for="Title">Title</label>
+        <input asp-for="Title" type="text" class="form-control" id="title" placeholder="Enter title">
+    </div>
+    <div class="form-group col-12">
+        <label asp-for="Author">Author</label>
+        <input asp-for="Author" type="text" class="form-control" id="author" placeholder="Enter author">
+    </div>
+    <div class="form-group col-12">
+        <label asp-for="Year">Year</label>
+        <input asp-for="Year" type="text" class="form-control" id="year" placeholder="Enter year">
+    </div>
+    <div class="form-group col-12">
+        <label asp-for="Genre">Genre</label>
+        <input asp-for="Genre" type="text" class="form-control" id="genre" placeholder="Enter genre">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

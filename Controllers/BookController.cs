@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using UserLibrary.Models;
 using UserLibrary.ViewModels;
 
@@ -28,25 +29,26 @@ namespace UserLibrary.Controllers
             return View();
         }
 
-        public RedirectToActionResult Create(string title, string? author, int? year, string? genre)
+        public IActionResult Add()
         {
-            Book book = new Book
-            {
-                Title = title,
-                Author = author,
-                Year = year,
-                Genre = genre
-            };
+            return View();
+        }
+
+        [Authorize]
+        [HttpPost]
+        public RedirectToActionResult Create(Book book)
+        {
             _bookRepository.AddBook(book);
             return RedirectToAction("Index");
         }
 
+        [Authorize]
         public RedirectToActionResult Update(int bookId, string? title, string? author, int? year, string? genre)
         {
             _bookRepository.UpdateBook(bookId, title, author, year, genre);
             return RedirectToAction("Index");
         }
-
+        [Authorize(Roles = "Admin")]
         public RedirectToActionResult Delete(int bookId)
         {
             _bookRepository.DeleteBook(bookId);
