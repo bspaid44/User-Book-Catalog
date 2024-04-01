@@ -78,3 +78,19 @@ footer {
     box-shadow: black 10px 10px;
 }
 
+.book-index {
+    background-color: lightblue;
+    padding-bottom: 10px;
+    border: 2px solid black;
+    border-radius: 10px;
+    box-shadow: black 10px 10px;
+}
+
+.book-detail {
+    background-color: lightblue;
+    padding-bottom: 10px;
+    border: 2px solid black;
+    border-radius: 10px;
+    box-shadow: black 10px 10px;
+}
+

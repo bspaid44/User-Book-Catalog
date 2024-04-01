@@ -252,13 +252,20 @@ namespace UserLibrary.Migrations
 
             modelBuilder.Entity("UserLibrary.Models.UserBooks", b =>
                 {
-                    b.Property<string>("UserBooksId")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<int>("BookId")
                         .HasColumnType("int");
 
-                    b.HasKey("UserBooksId");
+                    b.Property<string>("UserBooksId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
 
                     b.HasIndex("BookId");
 

@@ -23,6 +23,7 @@ builder.Services.AddDefaultIdentity<IdentityUser>()
     .AddEntityFrameworkStores<UserLibraryDbContext>();
 builder.Services.AddRazorPages();
 builder.Services.AddScoped<IBookRepository, BookRepository>();
+builder.Services.AddScoped<IUserBooksRepository, UserBooksRepository>();
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddSession();
 

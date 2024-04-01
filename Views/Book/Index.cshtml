@@ -1,14 +1,17 @@
 ﻿@model BookIndexViewModel
 
-<h1 class="my-5"><strong>Books</strong></h1>
+
+<div class="container col-8 book-index">
+    <h1 class="my-5"><strong>Books</strong></h1>
 
 
-<table>
-    <tr>
-        <th><h1>Title</h1></th>
-    </tr>
-    @foreach (var book in Model.Books)
-    {
-         <partial name="_BookCard" model="book" />
-    }
-</table>
+    <table>
+        <tr>
+            <th><h1>Title</h1></th>
+        </tr>
+        @foreach (var book in Model.Books)
+        {
+            <partial name="_BookCard" model="book" />
+        }
+    </table>
+</div>

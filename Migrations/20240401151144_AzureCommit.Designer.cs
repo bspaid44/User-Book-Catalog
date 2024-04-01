@@ -12,8 +12,8 @@ using UserLibrary.Models;
 namespace UserLibrary.Migrations
 {
     [DbContext(typeof(UserLibraryDbContext))]
-    [Migration("20240401032003_UpdatedInit")]
-    partial class UpdatedInit
+    [Migration("20240401151144_AzureCommit")]
+    partial class AzureCommit
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -263,7 +263,7 @@ namespace UserLibrary.Migrations
                     b.Property<int>("BookId")
                         .HasColumnType("int");
 
-                    b.Property<string>("Username")
+                    b.Property<string>("UserBooksId")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 

@@ -1,16 +1,18 @@
 ﻿@model Book
 
-<h3 class="my-5">
-    @Model.Title
-</h3>
+<div class="container col-8 book-detail">
+    <h3 class="my-5">
+        @Model.Title
+    </h3>
 
-<div class="row gx-5">
-    <div class="col-7">
-        <h4>Author: @Model.Author</h4>
-        <p>Year Published: @Model.Year</p>
-        <p>Genre: @Model.Genre</p>
-    </div>
-    <div>
-        <h2><a class="btn btn-secondary" asp-controller="User" asp-action="AddBook" asp-route-bookID="@Model.BookId">Add to your Book List</a></h2>
+    <div class="row gx-5">
+        <div class="col-7">
+            <h4>Author: @Model.Author</h4>
+            <p>Year Published: @Model.Year</p>
+            <p>Genre: @Model.Genre</p>
+        </div>
+        <div>
+            <h2><a class="btn btn-secondary" asp-controller="User" asp-action="AddBook" asp-route-bookID="@Model.BookId">Add to your Book List</a></h2>
+        </div>
     </div>
 </div>
