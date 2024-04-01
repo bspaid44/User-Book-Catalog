@@ -29,6 +29,7 @@ namespace UserLibrary.Controllers
             return View();
         }
 
+        [Authorize]
         public IActionResult Add()
         {
             return View();
