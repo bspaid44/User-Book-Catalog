@@ -70,3 +70,11 @@ footer {
     color: white;
 }
 
+.about-main {
+    background-color: lightgreen;
+    padding-bottom: 10px;
+    border: 2px solid black;
+    border-radius: 10px;
+    box-shadow: black 10px 10px;
+}
+
