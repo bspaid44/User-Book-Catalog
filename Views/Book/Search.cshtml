@@ -1,16 +1,18 @@
 ﻿
-
-<div class="my-5">
-    <h3 class="mb-4">
-        Enter your search query
-    </h3>
-    <input id="txtBookName" type="text" />
-    <button id="searchButton" class="btn btn-secondary">Search</button>
+<div class="container main-search">
+    <div class="my-5">
+        <h3 class="mb-4">
+            Enter your search query
+        </h3>
+        <input id="txtBookName" type="text" />
+        <button id="searchButton" class="btn btn-secondary">Search</button>
+    </div>
 </div>
-<table id="tblBook" cellpadding="0" cellspacing="0">
-    <tbody></tbody>
-</table>
-
+<div class="container col-8 book-index p-5">
+    <table id="tblBook" cellpadding="0" cellspacing="0">
+        <tbody></tbody>
+    </table>
+</div>
 <script type="text/javascript">
 
     $(document).ready(function () {
