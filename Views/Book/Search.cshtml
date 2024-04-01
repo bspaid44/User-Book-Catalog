@@ -1,5 +1,40 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿
+
+<div class="my-5">
+    <h3 class="mb-4">
+        Enter your search query
+    </h3>
+    <input id="txtBookName" type="text" />
+    <button id="searchButton" class="btn btn-secondary">Search</button>
+</div>
+<table id="tblBook" cellpadding="0" cellspacing="0">
+    <tbody></tbody>
+</table>
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        $("button").click(function () {
+            var searchQuery = $.trim($("#txtBookName").val());
+            $("tbody").html("");
+            $.ajax({
+                type: "POST",
+                url: "/api/Search",
+                data: "\"" + searchQuery + "\"",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (books) {
+                    $.each(books, function (i, book) {
+                        $("tbody").append($("<tr>"));
+                        appendElement = $("tbody tr").last();
+                        appendElement.append($("<td>").html('<h2><a href="/book/details/' + book.bookId + '" class="book-link">' + book.title + '</a></h2>'));
+                    });
+                },
+                error: function (xhr, status, error) {
+                    console.log(xhr)
+                }
+            });
+        });
+    });
+
+</script>
